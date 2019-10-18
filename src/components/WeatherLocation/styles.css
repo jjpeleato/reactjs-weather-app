@@ -1,0 +1,23 @@
+
+.weather-location {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-shadow: 10px 10px 40px -12px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.location {
+    width: 100%;
+    text-align: left;
+}
+
+.location h1 {
+    width: 100%;
+    margin: 0;
+    padding: 15px 15px 10px;
+    font-family: 'Roboto', sans-serif;
+    color: #313131;
+}
