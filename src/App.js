@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import LocationList from "./components/LocationList";
+import ForecastExtended from "./components/ForecastExtended";
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const cities = [
+    'Huesca,es',
+    'Zaragoza,es',
+    'Teruel,es',
+    'Madrid,es',
+];
+
+class App extends Component
+{
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            city: null
+        }
+    }
+
+    handleOnSelectedLocation = city => {
+        this.setState({city});
+    };
+
+    render() {
+        const { city } = this.state;
+
+        return (
+            <div className="App">
+                <LocationList cities={cities} onSelectedLocation={this.handleOnSelectedLocation}/>
+                {city === null ? '' : <ForecastExtended city={city}/>}
+            </div>
+        );
+    }
 }
 
 export default App;
