@@ -28,6 +28,7 @@ class ForecastExtended extends Component{
     componentDidUpdate(prevProps, prevState, snapshot) {
         const { city } = this.props;
         if (prevProps.city !== city) {
+            this.setState({forecastData: null});
             this.updateCity(city);
         }
     }
