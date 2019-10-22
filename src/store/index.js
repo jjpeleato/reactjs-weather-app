@@ -1,7 +1,9 @@
 import { createStore } from "redux";
 import { city } from './../reducers/city'
 
-const initialState = {};
+const initialState = {
+    city: 'Huesca,es'
+};
 
 export const store = createStore(
     city,
